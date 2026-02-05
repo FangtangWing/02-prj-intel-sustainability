@@ -54,10 +54,13 @@ header p {
   overflow-x: auto;
   padding: 20px 0;
   scroll-behavior: smooth;
+  align-items: flex-start;
 }
 
 .timeline-card {
-  min-width: 280px;
+  width: 100%;
+  max-width: 320px;
+  flex-shrink: 0;
   background-color: white;
   border-radius: 8px;
   padding: 25px;
@@ -70,7 +73,13 @@ header p {
 .timeline-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0, 113, 197, 0.3);
-  background-color: #f8fbff;
+  background-color: #003D82;
+}
+
+.timeline-card:hover .card-year,
+.timeline-card:hover .card-title,
+.timeline-card:hover .card-description {
+  color: white;
 }
 
 .card-year {
@@ -78,6 +87,7 @@ header p {
   font-weight: bold;
   color: #0071C5;
   margin-bottom: 15px;
+  transition: color 0.3s ease;
 }
 
 .card-title {
@@ -85,6 +95,7 @@ header p {
   font-weight: bold;
   color: #333;
   margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
 
 .card-image {
@@ -119,7 +130,7 @@ header p {
   font-style: italic;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   header {
     padding: 40px 15px;
   }
